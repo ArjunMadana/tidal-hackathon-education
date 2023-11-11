@@ -13,7 +13,7 @@ def index():
 def process_results():
     name = request.form['Name']
     id = request.form['StudentID']
-    gpa = int(request.form['GPA'])
+    gpa = float(request.form['GPA'])
     age = request.form['Age']
     marital = request.form['Marital']
     attendance = request.form['Attendence']

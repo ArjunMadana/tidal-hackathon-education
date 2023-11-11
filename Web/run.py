@@ -22,7 +22,7 @@ def run(marital_status, daytime_attendance, previous_qualification, displaced, e
 
     new_data_numerical = pd.DataFrame({
         'Age at enrollment': [age],  # Replace with actual values
-        "Curricular units 1st sem (grade)": [gpa * 5] # scale from 4-point scale to 40-point scale
+        "Curricular units 1st sem (grade)": [int(gpa * 5)] # scale from 4-point scale to 20-point scale
     })
 
     # Combine one-hot encoded categorical features with numerical features
