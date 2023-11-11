@@ -18,15 +18,15 @@ categorical_columns = ["Marital status", "Daytime/evening attendance", "Previous
 
 X_categorical = df[categorical_columns]
 
-# Specify the list of feature columns you want to include
-feature_columns = ['Age at enrollment', "Curricular units 1st sem (grade)"]  # Replace with your desired feature column names
+# Numerical feature columns
+feature_columns = ['Age at enrollment', "Curricular units 1st sem (grade)"]
 
 X_numerical = df[feature_columns]
 
 # Combine one-hot encoded categorical features with numerical features
 X_combined = np.concatenate([X_numerical.values, X_categorical.values], axis=1)
 
-y = [1 if v == "Dropout" else 0 for v in df[target_column]]
+y = [1 if v == "Dropout" else 0 for v in df[target_column]] # Convert text values to one-hot encoded integers
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X_combined, y, test_size=0.2, random_state=42)
@@ -42,7 +42,7 @@ y_test = np.array(y_test)
 # Create the model
 model = Sequential()
 
-# Add one or more Dense layers
+# Add layers
 model.add(Dense(32, activation='relu', input_dim=X_combined.shape[1]))
 model.add(Dense(32, activation='relu', input_dim=32))
 model.add(Dense(1, activation='sigmoid'))  # Output layer with sigmoid activation for binary classification
@@ -57,5 +57,3 @@ model.summary()
 model.fit(X_train, y_train, epochs=20, batch_size=32, validation_data=(X_test, y_test))
 
 model.save("model.keras")
-
-print(X_combined[1])
