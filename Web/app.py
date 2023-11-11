@@ -13,7 +13,7 @@ def index():
 def process_results():
     name = request.form['Name']
     id = request.form['StudentID']
-    gpa = request.form['GPA']
+    gpa = int(request.form['GPA'])
     age = request.form['Age']
     marital = request.form['Marital']
     attendance = request.form['Attendence']
@@ -27,10 +27,10 @@ def process_results():
     intl = request.form['International']
 
     value = run(marital, attendance, prev_qual, displaced, special_needs, debtor, tuition, gender, scholar, intl, age, gpa)
-
+    print("TEST")
     return redirect(url_for('results', value=value, name=name))
 
-@app.route('/results/<name>')
+@app.route('/results/<name>/<value>')
 def results(value,name):
     return render_template('results.html', name=name, value=value)
 
