@@ -6,6 +6,6 @@ app = Flask(__name__)
 def home():
     return render_template('index.html', prediction='HOME')
 
-@app.route('/predict')
-def predict():
-    return render_template('index.html', prediction='YESSSSS')
+@app.route('/results')
+def results():
+    return render_template('results.html', prediction='YESSSSS')
