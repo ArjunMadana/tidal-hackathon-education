@@ -6,40 +6,78 @@
     <title>Survey Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         form {
             max-width: 600px;
             margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         label {
             display: block;
             margin-bottom: 10px;
+            font-weight: bold;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-bottom: 15px;
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
         button {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 15px;
+            padding: 12px 20px;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-    <h3>Results: </h3>
-    <p>{{ prediction }}</p>
+    <header>
+        <h1>Survey Results</h1>
+    </header>
+
+    <form>
+        <label for="prediction">Name:</label>
+        <p>{{ name }}</p>
+
+        <button type="submit">Submit</button>
+    </form>
 
 </body>
 </html>
