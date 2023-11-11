@@ -4,13 +4,25 @@
 </head>
 
 <body>
-    <div id="title">
-        Dynamic Engagement 
-        <div id="subtitle">
-        Success Survey
+    <title>Home</title>
+    <link href="StyleSheet.css" rel="stylesheet">
+    <header>
+        <div class="title-bar">
+            <a class="title-link" href="index.html">Home</a>
+            <a class="title-link" href="about.html">About</a>
         </div>
+        <div class="header-div">
+            <div class="title-block">
+                <h1>Data Science for Education</h1>
+                <p style="color:#0D1B2A">Empowering Teachers through Predictive Analytics</p>
+            </div>
+        </div>
+    </header>
+    <div class="middle-space"></div>
+    <div id="title" class="body-header">
+        Dynamic Engagement Success Survey
     </div>
-    <div id="input">
+    <div id="input" class="form-header">
         <div>
             Name<br>
             <input name='Name' id="Name">
@@ -30,6 +42,14 @@
             Age<br>
             <input type="number" min="1" max="100" name="Age" id="Age">
         </input>
+        </div>
+        <div>
+            Gender<br>
+            <select name='Gender' id="Gender">
+                <option value="Select">Select</option>
+                <option value="1" selected>Male</option>
+                <option value="0">Female</option>
+            </select>
         </div>
         <div>
             Marital Status<br>
@@ -53,7 +73,7 @@
             </select>
         </div>
         <div>
-            Previoius Qualifications<br>
+            Previous Qualifications<br>
         <select name='StudentQualifications' id="StudentQualifications">
             <option value="Select">Select</option>
             <option value="1" selected>Secondary Education</option>
@@ -75,7 +95,7 @@
             </select>
         </div>
         <div>
-            Displaced<br>
+            Recently Displaced/Relocated<br>
             <select name='Displaced' id="Displaced">
                 <option value="Select">Select</option>
                 <option value="1">Yes</option>
@@ -91,7 +111,7 @@
             </select>
         </div>
         <div>
-            Debtor<br>
+            Has Debt<br>
             <select name='Debtor' id="Debtor">
                 <option value="Select">Select</option>
                 <option value="1">Yes</option>
@@ -107,15 +127,7 @@
             </select>
         </div>
         <div>
-            Gender<br>
-            <select name='Gender' id="Gender">
-                <option value="Select">Select</option>
-                <option value="1" selected>Male</option>
-                <option value="0">Female</option>
-            </select>
-        </div>
-        <div>
-            Scholarship Holder <br>
+            Scholarship Recipient<br>
             <select name='ScholarshipHolder' id="ScholarshipHolder">
                 <option value="Select">Select</option>
                 <option value="1">Yes</option>
@@ -123,7 +135,7 @@
             </select>
         </div>
         <div>
-            International Status<br>
+            International Student<br>
             <select name='International' id="International">
                 <option value="Select">Select</option>
                 <option value="1">Yes</option>
@@ -131,5 +143,6 @@
             </select>
         </div>
     </div>
+    <div class="middle-space"></div>
 </body>
 </html>
