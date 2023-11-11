@@ -35,7 +35,9 @@ p {
 
 .title-bar {
     padding-top: 2vh;
+    padding-bottom: 2vh;
     padding-left: 2vw;
+    background-color: #b7b8b4;
 }
 
 .title-link {
