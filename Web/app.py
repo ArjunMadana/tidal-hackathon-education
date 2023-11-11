@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for
+from run import run
 
 app = Flask(__name__)
 
@@ -25,11 +26,13 @@ def process_results():
     scholar = request.form['ScholarshipHolder']
     intl = request.form['International']
 
-    return redirect(url_for('results', name=name))
+    value = run(marital, attendance, prev_qual, displaced, special_needs, debtor, tuition, gender, scholar, intl, age, gpa)
+
+    return redirect(url_for('results', value=value, name=name))
 
 @app.route('/results/<name>')
-def results(name):
-    return render_template('results.html', name=name)
+def results(value,name):
+    return render_template('results.html', name=name, value=value)
 
 
 if __name__=='__main__':
