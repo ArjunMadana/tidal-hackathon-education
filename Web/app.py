@@ -7,7 +7,21 @@ app = Flask(__name__)
 def index():
     return render_template('index.html') 
 
+@app.route('/index.html')
+def index2():
+    return render_template('index.html') 
 
+@app.route('/findings.html')
+def findings():
+    return render_template('findings.html') 
+
+@app.route("/about.html")
+def about():
+    return render_template("about.html")
+
+@app.route("/StyleSheet.css")
+def stylesheet():
+    return render_template("StyleSheet.css")
 
 @app.route('/process_results', methods=['POST'])
 def process_results():
